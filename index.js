@@ -73,7 +73,7 @@ const badgeConfigs = [
 ];
 const badges = badgeConfigs.reduce((result, config) => result + ' ' + generateBadge(config), '');
 
-const gif = `<img align="right" src="https://media1.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" />`;
+const gif = `<img align="right" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2R5YjV2eGdsZmNqaWc3dGh1MWNqazNreGdueHdvNmFzbWNzYWF0YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iIqmM5tTjmpOB9mpbn/giphy.gif" />`;
 const factsTitle = generateTitle(2, `:zap: A Few Quick Facts`);
 const factsConfigs = [
     `🔭 I’m currently working on PySpark, AWS Glue, Airflow, Redshift`,
@@ -87,13 +87,13 @@ const factsConfigs = [
 const facts = factsConfigs.reduce((result, fact) => result + `\n - ${fact}`, '');
 
 const toolsTitle = generateTitle(2, `:rocket: Some Tools I Use`)
-const toolsIconSize = 25;
+const toolsIconSize = 40;
 const toolsConfig = [{
         src: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original-wordmark.svg',
         alt: 'python',
     },
     {
-        src: 'https://www.vectorlogo.zone/logos/aws_glue/aws_glue-icon.svg',
+        src: 'https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg',
         alt: 'AWS Glue',
     },
     {
@@ -193,7 +193,7 @@ function generateBadge(badgeConfig) {
 }
 
 function generateIcon(iconConfig, toolsIconSize) {
-    return `<img src="${iconConfig.src}" alt="${iconConfig.alt}" width="${toolsIconSize}" height="${toolsIconSize}" />`;
+    return `<img src="${iconConfig.src}" alt="${iconConfig.alt}" width="auto" height="40" />`;
 }
 
 function generateTitle(size, title) {

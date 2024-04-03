@@ -1,0 +1,28 @@
+{
+  "name": "jitender-saini",
+  "version": "1.0.0",
+  "description": "Personal README.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jitender-saini/jitender-saini.git"
+  },
+  "author": "Jitender Saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jitender-saini/jitender-saini/issues"
+  },
+  "homepage": "https://github.com/jitender-saini/jitender-saini#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "badge-maker": "^3.3.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-emoji": "^1.4.0",
+    "package-lock.json": "^1.0.0",
+    "package.json": "^0.0.0"
+  }
+}

@@ -15,17 +15,24 @@ md.use(mdEmoji);
 const BLOG_HOST = `https://jitender-saini.medium.com`;
 
 /* README Sections */
-const introTitle = generateTitle(2, `Hey :wave:, I'm ${generateLink('Stanley', 'https://jitender-saini.github.io/')}`);
+const introTitle = generateTitle(2, `Hey :wave:, I'm ${generateLink('Jay', 'https://jitender-saini.github.io/')}`);
 const introDescription = `I'm currently a data engineer at **${generateLink('air up GmbH', 'https://www.air-up.com/')}** and formerly at **${generateLink(
     'TO THE NEW',
     'https://tothenew.com/'
 )}** based in 🌁 Munich.`;
 
-const notice = `🍌 Don't forget to get some Potassium 🍌`
 
-const badgeConfigs = [{
+const badgeConfigs = [
+{
+        name: 'LinkedIn',
+        badgeText: '@saini--jitender',
+        labelBgColor: '0077B5',
+        logoBgColor: '0077B5',
+        logo: 'LinkedIn',
+        link: 'https://www.linkedin.com/in/saini-jitender/',
+    },{
         name: 'Website',
-        badgeText: 'jitender-saini.github.io',
+        badgeText: 'jitender--saini.github.io',
         labelBgColor: '4E69C8',
         logoBgColor: '4E69C8',
         logo: 'Firefox',
@@ -33,23 +40,15 @@ const badgeConfigs = [{
     },
     {
         name: 'Medium',
-        badgeText: '@jitender-saini',
-        labelBgColor: '14c767',
-        logoBgColor: '14c767',
+        badgeText: '@jitender--saini',
+        labelBgColor: '034a6c',
+        logoBgColor: '034a6c',
         logo: 'Medium',
         link: 'https://jitender-saini.medium.com',
     },
     {
-        name: 'LinkedIn',
-        badgeText: '@saini-jitender',
-        labelBgColor: '0077B5',
-        logoBgColor: '0077B5',
-        logo: 'LinkedIn',
-        link: 'https://www.linkedin.com/in/saini-jitender/',
-    },
-    {
         name: 'DevTo',
-        badgeText: '@jitender-saini',
+        badgeText: '@jitender--saini',
         labelBgColor: '0A0A0A',
         logoBgColor: '0A0A0A',
         logo: 'dev.to',
@@ -57,12 +56,20 @@ const badgeConfigs = [{
     },
     {
         name: 'Spotify',
-        badgeText: '@Jay Saini',
+        badgeText: '@JaySaini',
         labelBgColor: '1ED760',
         logoBgColor: 'fff',
         logo: 'Spotify',
         link: 'https://open.spotify.com/user/w2g7q0sr8eibbb16aikslpfmc?si=c3d493cf3c1a4570',
     },
+    {
+        name: 'Instagram',
+        badgeText: '@fotos.jay',
+        labelBgColor: '7236bb',
+        logoBgColor: '7236bb',
+        logo: 'Instagram',
+        link: 'https://instagram.com/fotos.jay',
+    }
 ];
 const badges = badgeConfigs.reduce((result, config) => result + ' ' + generateBadge(config), '');
 
@@ -78,8 +85,6 @@ const factsConfigs = [
     `🎉 Fun Fact: Cooking is my stress buster!`,
 ];
 const facts = factsConfigs.reduce((result, fact) => result + `\n - ${fact}`, '');
-
-const postsTitle = generateTitle(2, `:black_nib: Recent Posts`)
 
 const toolsTitle = generateTitle(2, `:rocket: Some Tools I Use`)
 const toolsIconSize = 25;
@@ -116,7 +121,7 @@ const toolsConfig = [{
         alt: 'React',
     },
     {
-        src: 'https://en.wikipedia.org/wiki/Amazon_Redshift#/media/File:Amazon-Redshift-Logo.svg',
+        src: 'https://upload.wikimedia.org/wikipedia/commons/7/73/Amazon-Redshift-Logo.svg',
         alt: 'Redshift',
     },
     {
@@ -155,17 +160,16 @@ const visitors = `[![HitCount](https://hits.dwyl.com/jitender-saini/jitender-sai
 const content = `${introTitle}\n
 ${introDescription}\n
 ${badges}\n
-${notice}\n
+
 ${gif}\n
 ${factsTitle}\n
 ${facts}\n
-${postsTitle}\n
 
 ${toolsTitle}\n
 <p align="left">\n
     ${tools}\n
 </p>\n
-//${stats}\n
+
 ${visitors}
 `;
 
@@ -177,10 +181,15 @@ ${visitors}
         }
         console.info(`Writing to README.md`);
     });
-})();
+
 
 function generateBadge(badgeConfig) {
-    return `[![${badgeConfig.name} Badge](https://img.shields.io/badge/-${badgeConfig.badgeText}-${badgeConfig.labelBgColor}?style=flat-square&labelColor=${badgeConfig.logoBgColor}&logo=${badgeConfig.logo}&link=${badgeConfig.link})](${badgeConfig.link})`;
+//[![LinkedIn](https://img.shields.io/badge/LinkedIn-@saaaini-0077B5?style=for-the-badge&logo=LinkedIn)](https://www.linkedin.com/in/saaaini/)
+//https://img.shields.io/badge/-jitender--saini.github.io-4E69C8?style=for-the-badge&logo=Firefox
+//https://img.shields.io/badge/-jitender--saini.github.io?style=flat-square&labelColor=4E69C8&logo=Firefox&link=https://jitender-saini.github.io
+    badge = `[![${badgeConfig.name}](https://img.shields.io/badge/-${badgeConfig.badgeText}-${badgeConfig.logoBgColor}?style=for-the-badge&logo=${badgeConfig.logo}&link=${badgeConfig.link})](${badgeConfig.link})`
+//    console.log(badge)
+    return badge
 }
 
 function generateIcon(iconConfig, toolsIconSize) {
